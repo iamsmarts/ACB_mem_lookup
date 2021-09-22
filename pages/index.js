@@ -11,7 +11,7 @@ export async function getServerSideProps({ query }) {
     const auth = await google.auth.getClient({ scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'] });
     const sheets = google.sheets({ version: 'v4', auth });
 
-    const range = `master!A2:E475`
+    const range = `master!A2:E517`
 
     const response = await sheets.spreadsheets.values.get({
         spreadsheetId: process.env.SHEET_ID,
@@ -52,7 +52,7 @@ export default function List({members}){
                 return memFound
             }
         })
-        console.log(memFound.length)
+        console.log(memFound.length, memFound, 'something')
 
         if(memFound.length > 0){
           setActive(true)
