@@ -128,7 +128,7 @@ export default function List({members}){
         )}
         <div className="footer row text-center">
           <div className="col"><p>Angel City Brigade - 501 C 7</p></div>
-          <div class="w-100"></div>
+          <div className="w-100"></div>
           <div className="col">
             <Link href="https://instagram.com/angelcitybrigade"><a><FontAwesomeIcon icon={faInstagram}/> </a></Link>
             <Link href="https://twitter.com/ACBxLA"><a><FontAwesomeIcon icon={faTwitter}/> </a></Link>
