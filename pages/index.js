@@ -76,6 +76,36 @@ export default function List({members}){
 
     return(
       <div className="container">
+  <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+      <title>ACB Member ID Lookup</title>
+
+
+      <meta name="description" content="ACB - Lookup your Membership ID"/>
+      <link rel="canonical" href="https://acb.la"/>
+
+      <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+
+      <meta property="og:url" content="https://acb.la" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="ANGEL CITY BRIGADE | ACB.LA"/>
+      <meta property="og:title" content="Angel City Brigade" />
+      <meta property="og:description" content="ACB - Lookup your Membership ID" />
+      <meta property="og:image" content="/acb-stands-scarves-update.jpg" />
+      <meta property="og:image:alt" content="ACB in action, scarves up!" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@acbrigade" />
+      <meta name="twitter:image" content="https://b121gade.com/wp-content/uploads/2021/03/IMG_2416-scaled.jpg" />
+      <meta name="twitter:creator" content="@acbrigade" />
+      <meta property="og:url" content="https://acb.la" />
+      <meta property="og:title" content="121 Angel City Brigade 122" />
+      <meta property="og:description" content="ACB - Lookup your Membership ID" />
+      <meta property="og:image" content="/acb-stands-scarves-update.jpg" />
+
+      <link rel="shortcut icon" href="/favicon.ico" />
+  </Head>
         <div className="row hero">
           <div className="col">
             <div className="imageWrap">
@@ -129,7 +159,7 @@ export default function List({members}){
         <div className="footer row text-center">
           <div className="col"><p>Angel City Brigade - 501 C 7</p></div>
           <div className="w-100"></div>
-          <div className="col">
+          <div className="col icons">
             <Link href="https://instagram.com/angelcitybrigade"><a><FontAwesomeIcon icon={faInstagram}/> </a></Link>
             <Link href="https://twitter.com/ACBxLA"><a><FontAwesomeIcon icon={faTwitter}/> </a></Link>
             <Link href="https://facebook.com/angelcitybrigade"><a><FontAwesomeIcon icon={faFacebook}/> </a></Link>

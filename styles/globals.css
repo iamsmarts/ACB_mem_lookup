@@ -78,3 +78,6 @@ svg{
 
   --bs-gutter-x: 0rem
 }
+.icons svg{
+  max-width:25px;
+}
