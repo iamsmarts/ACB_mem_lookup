@@ -1,30 +1,27 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { google } from 'googleapis'
 import { useCallback, useRef, useState } from 'react';
 import SearchField from 'react-search-field'
+import {supabase} from '../utils/supaConfig'
 
 import header from '../public/header-update.jpg'
 
+
+
 export async function getServerSideProps({ query }) {
-    const auth = await google.auth.getClient({ scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'] });
-    const sheets = google.sheets({ version: 'v4', auth });
 
-    const range = `master!A2:E517`
+    let data = await supabase
+        .from('Members')
+        .select('*')
 
-    const response = await sheets.spreadsheets.values.get({
-        spreadsheetId: process.env.SHEET_ID,
-        range,
-    })
-
-    const data = response.data.values
+    data = data.body
 
     const members = data.map((mem, i)=>{
         let member = {
-            name : `${mem[2]} ${mem[3]}`,
-            email: mem[4],
-            id: mem[0]
+            name : `${mem.firstName}, ${mem.lastName}`,
+            email: mem.email,
+            id: mem.memberID
         }
         return member
     })
@@ -37,6 +34,7 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function List({members}){
+    console.log(members)
     const searchRef = useRef(null)
     const [query, setQuery] = useState('')
     const [active, setActive] = useState(false)
@@ -52,7 +50,6 @@ export default function List({members}){
                 return memFound
             }
         })
-        console.log(memFound.length, memFound, 'something')
 
         if(memFound.length > 0){
           setActive(true)
@@ -112,6 +109,5 @@ export default function List({members}){
           </div>
         )}
       </div>
-
     )
 }
