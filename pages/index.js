@@ -44,15 +44,16 @@ export default function List({members}){
 
     const onChange = (value)=>{
         value = value.replace(/\s+/g, '')
+        value = value.toLowerCase()
         setQuery(value)
         let memFound =''
         const listCheck = members.map((mem, i)=>{
-            if(mem.email === value){
+            let memEmail = mem.email.toLowerCase()
+            if(memEmail === value){
                 memFound = `${mem.name} your member ID is : #${mem.id}`
                 return memFound
             }
         })
-
         if(memFound.length > 0){
           setActive(true)
           setResults(memFound)
